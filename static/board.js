@@ -1,4 +1,4 @@
-let myNum = ["static/pics/2.png","static/pics/3.png", "static/pics/5.png", "static/pics/7.png","static/pics/11.png","static/pics/jong.png"];
+let myNum = ["pics/2.png","static/pics/3.png", "static/pics/5.png", "static/pics/7.png","static/pics/11.png","static/pics/jong.png"];
 // จำกัดให้แสดงสูงสุด 10 รูปภาพ
 let limitedNum = myNum.slice(0, 10);
 
