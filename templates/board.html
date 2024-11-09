@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAKAYAA - Board Game</title>
+    <link rel="stylesheet" href="static/board.css">
+</head>
+<body>
+    <h1>KAKAYAA</h1>
+    <div class="game-container">       
+        <!-- Player section -->
+        <div class="player-section">
+            <div class="player" id="player1">
+                <img src="static/pics/player1.png" alt="Player 1">
+                <h2>Player 1</h2>
+                <div class="player-scores">
+                    <span class="score green">0</span>
+                    <span class="score blue">0</span>
+                    <span class="score red">0</span>
+                    <span class="score yellow">0</span>
+                </div>
+            </div>
+            <div class="player" id="player2">
+                <img src="static/pics/player2.png" alt="Player 2">
+                <h2>Player 2</h2>
+                <div class="player-scores">
+                    <span class="score green">0</span>
+                    <span class="score blue">0</span>
+                    <span class="score red">0</span>
+                    <span class="score yellow">0</span>
+                </div>
+            </div>
+            <div class="player" id="player3">
+                <img src="static/pics/player3.png" alt="Player 3">
+                <h2>Player 3</h2>
+                <div class="player-scores">
+                    <span class="score green">0</span>
+                    <span class="score blue">0</span>
+                    <span class="score red">0</span>
+                    <span class="score yellow">0</span>
+                </div>
+            </div>
+            <div class="player" id="player4">
+                <img src="static/pics/player4.png" alt="Player 4">
+                <h2>Player 4</h2>
+                <div class="player-scores">
+                    <span class="score green">0</span>
+                    <span class="score blue">0</span>
+                    <span class="score red">0</span>
+                    <span class="score yellow">0</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Grid section -->
+        <!-- Grid section -->
+<div class="grid-section">
+    <div class="grid-cell yellow" onclick="handleGridClick(this)" style="background-image: url('yellow-image.png');"></div>
+    <div class="grid-cell yellow" onclick="handleGridClick(this)" style="background-image: url('yellow-image.png');"></div>
+    <div class="grid-cell yellow" onclick="handleGridClick(this)" style="background-image: url('yellow-image.png');"></div>
+    <div class="grid-cell yellow" onclick="handleGridClick(this)" style="background-image: url('yellow-image.png');"></div>
+    <div class="grid-cell red" onclick="handleGridClick(this)" style="background-image: url('red-image.png');"></div>
+    <div class="grid-cell red" onclick="handleGridClick(this)" style="background-image: url('red-image.png');"></div>
+    <div class="grid-cell red" onclick="handleGridClick(this)" style="background-image: url('red-image.png');"></div>
+    <div class="grid-cell red" onclick="handleGridClick(this)" style="background-image: url('red-image.png');"></div>
+    <div class="grid-cell blue" onclick="handleGridClick(this)" style="background-image: url('blue-image.png');"></div>
+    <div class="grid-cell blue" onclick="handleGridClick(this)" style="background-image: url('blue-image.png');"></div>
+    <div class="grid-cell blue" onclick="handleGridClick(this)" style="background-image: url('blue-image.png');"></div>
+    <div class="grid-cell blue" onclick="handleGridClick(this)" style="background-image: url('blue-image.png');"></div>
+    <div class="grid-cell green" onclick="handleGridClick(this)" style="background-image: url('green-image.png');"></div>
+    <div class="grid-cell green" onclick="handleGridClick(this)" style="background-image: url('green-image.png');"></div>
+    <div class="grid-cell green" onclick="handleGridClick(this)" style="background-image: url('green-image.png');"></div>
+    <div class="grid-cell green" onclick="handleGridClick(this)" style="background-image: url('green-image.png');"></div>
+</div>
+
+
+        <!-- Controls section -->
+        <div class="controls-section">
+            
+            <button class="control-button">เก็บ</button>
+            <button class="control-button">หยิบ 2</button>
+            <button class="control-button">หยิบ 3</button>
+            <button class="control-button">จอง</button>
+
+            <div class="reserve-numbers">
+                <button class="number-button"><img src="static/pics/2.png" alt="2" onclick="get_2()"></button>
+                <button class="number-button"><img src="static/pics/3.png" alt="3"></button>
+                <button class="number-button"><img src="static/pics/5.png" alt="5"></button>
+                <button class="number-button"><img src="static/pics/7.png" alt="7"></button>
+                <button class="number-button"><img src="static/pics/11.png" alt="11"></button>
+                <button class="number-button"><img src="static/pics/jong.png" alt="15"></button>
+                <div id="result"></div>
+            </div>
+
+            <div class="backpack">
+                <h3>กระเป๋า</h3>
+                <div class="backpack-container" id="mybackpack">
+                <div class="backpack-button"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="static/board.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

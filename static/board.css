@@ -1,0 +1,170 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #282828;
+    color: #e2e2e2;
+    text-align: center;
+    margin: 1%;
+    padding: 0;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5%;
+}
+
+/* Board Section */
+.board-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid-section {
+    display: grid;
+    grid-template-columns: repeat(3, 15%);
+    grid-gap: 2%;
+}
+
+/* Players Section */
+.players-section {
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+}
+
+.player {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 8px;
+    font-size:1.7ch;
+    color: white;
+    text-align: center;
+    margin-bottom: 7%;
+    margin-top: 7%;
+}
+
+.player img {
+    width: 50px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.player-scores {
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+}
+
+.score {
+    font-size: 1.2em;
+}
+
+.grid-section {
+    display: grid;
+    grid-template-columns: repeat(4, 120px);
+    grid-template-rows: repeat(4, 160px);
+    gap: 10px;
+
+}
+
+.grid-cell {
+    width: 120px;
+    height: 160px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: transform 0.2s; /* เพิ่มเอฟเฟกต์ขยายเมื่อกด */
+}
+
+.grid-cell:active {
+    transform: scale(0.85); /* ลดขนาดเล็กน้อยเมื่อกด */
+}
+
+
+.grid-cell.yellow { background-color: #f0a500; }
+.grid-cell.red { background-color: #d62828; }
+.grid-cell.blue { background-color: #0077b6; }
+.grid-cell.green { background-color: #008000; }
+
+.controls-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.control-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.control-button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+.reserve-numbers{
+    display: flex;
+    gap: 10px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.number-button {
+    visibility: hidden;
+    background-color: transparent;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.number-button img {
+    visibility: visible;
+    width: 60px; /* กำหนดขนาดของรูปภาพ */
+    height: 60px;
+}
+
+.number-button img:active {
+    transform: scale(0.85); /* ลดขนาดเล็กน้อยเมื่อกด */
+}
+
+.backpack {
+    background-color: #444;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+.backpack-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* แสดงผลเป็น 5 คอลัมน์ต่อแถว */
+    gap: 8px; /* ระยะห่างระหว่างปุ่ม */
+}
+
+.backpack-button {
+    visibility: hidden;
+    display: inline-flex;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+.backpack-button img {
+    visibility: visible;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
