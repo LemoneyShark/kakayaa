@@ -1,10 +1,7 @@
-from fastapi import FastAPI,Depends, Form, HTTPException, Request
-from fastapi.responses import FileResponse, HTMLResponse, JSONResponse, RedirectResponse
+from fastapi import FastAPI,Depends, Form
+from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from sqlalchemy import create_engine, text
-from sqlalchemy.orm import sessionmaker, Session
-from pydantic import BaseModel
 
 app = FastAPI()
 
