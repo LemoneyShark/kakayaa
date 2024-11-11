@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+}
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: white;
+}
+.button-back {
+    background-color: #a83232;
+}
+.button-back:hover {
+    background-color: #d64545;
+}
+.button-start {
+    background-color: #f0a500;
+}
+.button-start:hover {
+    background-color: #ffbf00;
+}
+.room-number {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.player-list {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    max-width: 500px;
+}
+.player {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #555;
+    border-radius: 10px;
+}
+.player img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+}
+.player-name {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.status-indicator {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #4caf50; /* Green for "online" */
+    margin-left: auto;
+}
