@@ -5,6 +5,13 @@ let targetCardValue = 0;
 let cardPoint = 0;
 let cardColor = ""; // ตัวแปรสำหรับเก็บสีของการ์ด
 
+// ฟังก์ชันเพื่อดึงข้อมูลของการ์ด
+function getCardInfo(cardElement) {
+    const value = parseInt(cardElement.querySelector(".card-number").innerText, 10);
+    const point = parseInt(cardElement.querySelector(".card-small-number").innerText, 10);
+    return { value, point };
+}
+
 function updateBackpack() {
     let backpackHTML = "";
     limitedNum.forEach((num, index) => {
@@ -15,9 +22,9 @@ function updateBackpack() {
     document.getElementById("mybackpack").innerHTML = backpackHTML;
 }
 
-function showCardPopup(value, point, color) {
-    targetCardValue = value;
-    cardPoint = point;
+function showCardPopup(cardInfo, color) {
+    targetCardValue = cardInfo.value;
+    cardPoint = cardInfo.point;
     cardColor = color; // เก็บสีของการ์ด
     selectedCoins = []; // ล้างเหรียญที่เลือกก่อนหน้า
 
@@ -47,7 +54,7 @@ function showCardPopup(value, point, color) {
 }
 
 function addToSelectedCoins(index) {
-    const coinValue = Number(limitedNum[index].split('/').pop().split('.')[0]); // ดึงเลขเหรียญจากชื่อไฟล์
+    const coinValue = Number(limitedNum[index].split('/').pop().split('.')[0]);
     selectedCoins.push(coinValue);
     document.getElementById("selected-coins").innerText = selectedCoins.join(', ') || 'ไม่มี';
 }
@@ -62,7 +69,7 @@ function confirmPurchase() {
     
     if (product === targetCardValue) {
         let scoreElement;
-        
+        let scoreGoal;
         if (cardColor === "green") {
             scoreElement = document.getElementById("score-green");
         } else if (cardColor === "blue") {
@@ -71,25 +78,18 @@ function confirmPurchase() {
             scoreElement = document.getElementById("score-red");
         }
 
-        // ตรวจสอบว่ามี scoreElement หรือไม่
-        if (!scoreElement) {
-            console.error("ไม่พบ scoreElement สำหรับสีการ์ด:", cardColor);
-            Swal.fire("เกิดข้อผิดพลาด: ไม่พบคะแนนสำหรับการ์ดสีที่เลือก");
-            return;
-        }
+        scoreElement.innerText = Number(scoreElement.innerText) + 1;
+        scoreGoal = document.getElementById("score-goal");
+        scoreGoal.innerText = Number(scoreGoal.innerText) + cardPoint;
 
-        // เพิ่มแต้มในคะแนนตามสีการ์ด
-        scoreElement.innerText = Number(scoreElement.innerText) + cardPoint;
 
-        // ลบเหรียญที่เลือกจากกระเป๋า
         selectedCoins.forEach(coinValue => {
             const index = myNum.indexOf(`static/pics/${coinValue}.png`);
             if (index !== -1) {
-                myNum.splice(index, 1); // ลบเหรียญจากกระเป๋า
+                myNum.splice(index, 1);
             }
         });
 
-        // อัปเดตกระเป๋าและแสดงผล
         limitedNum = myNum.slice(0, 10);
         updateBackpack();
 
@@ -98,7 +98,6 @@ function confirmPurchase() {
         Swal.fire("เหรียญที่เลือกไม่ตรงกับแต้มของการ์ด");
     }
 }
-
 
 function addCoin(coinValue) {
     if (myNum.length >= 10) {

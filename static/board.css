@@ -62,6 +62,10 @@ body {
     font-size: 1.2em;
 }
 
+#score-goal {
+    color: yellow;
+}
+
 .grid-section {
     display: grid;
     grid-template-columns: repeat(4, 120px);

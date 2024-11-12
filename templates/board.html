@@ -19,6 +19,7 @@
                     <span class="score blue" id="score-blue">0</span>
                     <span class="score red" id='score-red'>0</span>
                     <span class="score yellow" id='score-yellow'>0</span>
+                    <span class="score goal" id='score-goal'>0</span>
                 </div>
             </div>
             
@@ -31,51 +32,51 @@
             <div class="grid-cell yellow" onclick="showCardPopup(this)" style="background-image: url('yellow-image.png');"></div>
             <div class="grid-cell yellow" onclick="showCardPopup(this)" style="background-image: url('yellow-image.png');"></div>
 
-            <div class="grid-cell red" onclick="showCardPopup(512,3, 'red')" style="background-image: url('red-image.png');">
+            <div class="grid-cell red" onclick="showCardPopup(getCardInfo(this),'red')" style="background-image: url('red-image.png');">
                 <span class="card-number">512</span>
                 <span class="card-small-number">3</span>
             </div>
-            <div class="grid-cell red" onclick="showCardPopup(924,3, 'red')" style="background-image: url('red-image.png');">
+            <div class="grid-cell red" onclick="showCardPopup(getCardInfo(this),'red')" style="background-image: url('red-image.png');">
                 <span class="card-number">924</span>
                 <span class="card-small-number">3</span>
             </div>
-            <div class="grid-cell red" onclick="showCardPopup(891,4, 'red')" style="background-image: url('red-image.png');">
+            <div class="grid-cell red" onclick="showCardPopup(getCardInfo(this),'red')" style="background-image: url('red-image.png');">
                 <span class="card-number">891</span>
                 <span class="card-small-number">4</span>
             </div>
-            <div class="grid-cell red" onclick="showCardPopup(820,3, 'red')" style="background-image: url('red-image.png');">
+            <div class="grid-cell red" onclick="showCardPopup(getCardInfo(this),'red')" style="background-image: url('red-image.png');">
                 <span class="card-number">820</span>
                 <span class="card-small-number">3</span>
             </div>
-            <div class="grid-cell blue" onclick="showCardPopup(400,1, 'blue')" style="background-image: url('blue-image.png');">
+            <div class="grid-cell blue" onclick="showCardPopup(getCardInfo(this),'blue')" style="background-image: url('blue-image.png');">
                 <span class="card-number">400</span>
                 <span class="card-small-number">1</span>
             </div>
-            <div class="grid-cell blue" onclick="showCardPopup(360,3, 'blue')" style="background-image: url('blue-image.png');">
+            <div class="grid-cell blue" onclick="showCardPopup(getCardInfo(this),'blue')" style="background-image: url('blue-image.png');">
                 <span class="card-number">360</span>
                 <span class="card-small-number">3</span>
             </div>
-            <div class="grid-cell blue" onclick="showCardPopup(220,1, 'blue')" style="background-image: url('blue-image.png');">
+            <div class="grid-cell blue" onclick="showCardPopup(getCardInfo(this),'blue')" style="background-image: url('blue-image.png');">
                 <span class="card-number">220</span>
                 <span class="card-small-number">1</span>
             </div>
-            <div class="grid-cell blue" onclick="showCardPopup(252,3, 'blue')" style="background-image: url('blue-image.png');">
+            <div class="grid-cell blue" onclick="showCardPopup(getCardInfo(this),'blue')" style="background-image: url('blue-image.png');">
                 <span class="card-number">252</span>
                 <span class="card-small-number">3</span>
             </div>
-            <div class="grid-cell green" onclick="showCardPopup(20, 1, 'green')" style="background-image: url('green-image.png');">
+            <div class="grid-cell green" onclick="showCardPopup(getCardInfo(this),'green')" style="background-image: url('green-image.png');">
                 <span class="card-number">20</span>
                 <span class="card-small-number">1</span>
             </div>
-            <div class="grid-cell green" onclick="showCardPopup(121, 0, 'green')" style="background-image: url('green-image.png');">
+            <div class="grid-cell green" onclick="showCardPopup(getCardInfo(this),'green')" style="background-image: url('green-image.png');">
                 <span class="card-number">121</span>
                 <span class="card-small-number">0</span>
             </div>
-            <div class="grid-cell green" onclick="showCardPopup(49, 0, 'green')" style="background-image: url('green-image.png');">
+            <div class="grid-cell green" onclick="showCardPopup(getCardInfo(this),'green')" style="background-image: url('green-image.png');">
                 <span class="card-number">49</span>
                 <span class="card-small-number">0</span>
             </div>
-            <div class="grid-cell green" onclick="showCardPopup(18, 0,'green')" style="background-image: url('green-image.png');">
+            <div class="grid-cell green" onclick="showCardPopup(getCardInfo(this),'green')" style="background-image: url('green-image.png');">
                 <span class="card-number">18</span>
                 <span class="card-small-number">0</span>
             </div>
