@@ -71,13 +71,32 @@ body {
 }
 
 .grid-cell {
-    width: 120px;
-    height: 160px;
-    border-radius: 8px;
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-    transition: transform 0.2s; /* เพิ่มเอฟเฟกต์ขยายเมื่อกด */
+    position: relative;
+    width: 120px;  /* กำหนดขนาดของการ์ด */
+    height: 160px; /* กำหนดขนาดของการ์ด */
+    display: flex;
+    justify-content: center;  /* จัดตำแหน่งให้อยู่ตรงกลางแนวนอน */
+    align-items: center;      /* จัดตำแหน่งให้อยู่ตรงกลางแนวตั้ง */
+    background-size: cover;   /* ให้พื้นหลังของการ์ดครอบคลุมเต็มพื้นที่ */
+    background-position: center; /* ให้พื้นหลังอยู่ตรงกลาง */
+}
+
+.card-number {
+    color: white;            /* สีตัวเลข */
+    font-size: 30px;         /* ขนาดตัวเลข */
+    font-weight: bold;       /* ตัวหนา */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* เงาของตัวเลข เพื่อให้เด่นขึ้น */
+}
+
+/* ตัวเลขเล็กๆ ที่มุมขวาบน */
+.card-small-number {
+    position: absolute;
+    top: 5px; /* ห่างจากด้านบน */
+    right: 5px; /* ห่างจากด้านขวา */
+    font-size: 14px; /* ขนาดตัวเลขเล็ก */
+    color: white; /* สีตัวเลข */
+    font-weight: bold; /* ตัวหนา */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* เงาเบาๆ */
 }
 
 .grid-cell:active {

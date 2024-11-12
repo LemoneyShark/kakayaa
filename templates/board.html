@@ -15,93 +15,93 @@
                 <img src="static/pics/player1.png" alt="Player 1">
                 <h2>Player 1</h2>
                 <div class="player-scores">
-                    <span class="score green">0</span>
-                    <span class="score blue">0</span>
-                    <span class="score red">0</span>
-                    <span class="score yellow">0</span>
+                    <span class="score green" id="score-green">0</span>
+                    <span class="score blue" id="score-blue">0</span>
+                    <span class="score red" id='score-red'>0</span>
+                    <span class="score yellow" id='score-yellow'>0</span>
                 </div>
             </div>
-            <div class="player" id="player2">
-                <img src="static/pics/player2.png" alt="Player 2">
-                <h2>Player 2</h2>
-                <div class="player-scores">
-                    <span class="score green">0</span>
-                    <span class="score blue">0</span>
-                    <span class="score red">0</span>
-                    <span class="score yellow">0</span>
-                </div>
-            </div>
-            <div class="player" id="player3">
-                <img src="static/pics/player3.png" alt="Player 3">
-                <h2>Player 3</h2>
-                <div class="player-scores">
-                    <span class="score green">0</span>
-                    <span class="score blue">0</span>
-                    <span class="score red">0</span>
-                    <span class="score yellow">0</span>
-                </div>
-            </div>
-            <div class="player" id="player4">
-                <img src="static/pics/player4.png" alt="Player 4">
-                <h2>Player 4</h2>
-                <div class="player-scores">
-                    <span class="score green">0</span>
-                    <span class="score blue">0</span>
-                    <span class="score red">0</span>
-                    <span class="score yellow">0</span>
-                </div>
-            </div>
+            
         </div>
         
         <!-- Grid section -->
-        <!-- Grid section -->
-<div class="grid-section">
-    <div class="grid-cell yellow" onclick="handleGridClick(this)" style="background-image: url('yellow-image.png');"></div>
-    <div class="grid-cell yellow" onclick="handleGridClick(this)" style="background-image: url('yellow-image.png');"></div>
-    <div class="grid-cell yellow" onclick="handleGridClick(this)" style="background-image: url('yellow-image.png');"></div>
-    <div class="grid-cell yellow" onclick="handleGridClick(this)" style="background-image: url('yellow-image.png');"></div>
-    <div class="grid-cell red" onclick="handleGridClick(this)" style="background-image: url('red-image.png');"></div>
-    <div class="grid-cell red" onclick="handleGridClick(this)" style="background-image: url('red-image.png');"></div>
-    <div class="grid-cell red" onclick="handleGridClick(this)" style="background-image: url('red-image.png');"></div>
-    <div class="grid-cell red" onclick="handleGridClick(this)" style="background-image: url('red-image.png');"></div>
-    <div class="grid-cell blue" onclick="handleGridClick(this)" style="background-image: url('blue-image.png');"></div>
-    <div class="grid-cell blue" onclick="handleGridClick(this)" style="background-image: url('blue-image.png');"></div>
-    <div class="grid-cell blue" onclick="handleGridClick(this)" style="background-image: url('blue-image.png');"></div>
-    <div class="grid-cell blue" onclick="handleGridClick(this)" style="background-image: url('blue-image.png');"></div>
-    <div class="grid-cell green" onclick="handleGridClick(this)" style="background-image: url('green-image.png');"></div>
-    <div class="grid-cell green" onclick="handleGridClick(this)" style="background-image: url('green-image.png');"></div>
-    <div class="grid-cell green" onclick="handleGridClick(this)" style="background-image: url('green-image.png');"></div>
-    <div class="grid-cell green" onclick="handleGridClick(this)" style="background-image: url('green-image.png');"></div>
-</div>
+        <div class="grid-section">
+            <div class="grid-cell yellow" onclick="showCardPopup(this)" style="background-image: url('yellow-image.png');"></div>
+            <div class="grid-cell yellow" onclick="showCardPopup(this)" style="background-image: url('yellow-image.png');"></div>
+            <div class="grid-cell yellow" onclick="showCardPopup(this)" style="background-image: url('yellow-image.png');"></div>
+            <div class="grid-cell yellow" onclick="showCardPopup(this)" style="background-image: url('yellow-image.png');"></div>
 
+            <div class="grid-cell red" onclick="showCardPopup(512,3, 'red')" style="background-image: url('red-image.png');">
+                <span class="card-number">512</span>
+                <span class="card-small-number">3</span>
+            </div>
+            <div class="grid-cell red" onclick="showCardPopup(924,3, 'red')" style="background-image: url('red-image.png');">
+                <span class="card-number">924</span>
+                <span class="card-small-number">3</span>
+            </div>
+            <div class="grid-cell red" onclick="showCardPopup(891,4, 'red')" style="background-image: url('red-image.png');">
+                <span class="card-number">891</span>
+                <span class="card-small-number">4</span>
+            </div>
+            <div class="grid-cell red" onclick="showCardPopup(820,3, 'red')" style="background-image: url('red-image.png');">
+                <span class="card-number">820</span>
+                <span class="card-small-number">3</span>
+            </div>
+            <div class="grid-cell blue" onclick="showCardPopup(400,1, 'blue')" style="background-image: url('blue-image.png');">
+                <span class="card-number">400</span>
+                <span class="card-small-number">1</span>
+            </div>
+            <div class="grid-cell blue" onclick="showCardPopup(360,3, 'blue')" style="background-image: url('blue-image.png');">
+                <span class="card-number">360</span>
+                <span class="card-small-number">3</span>
+            </div>
+            <div class="grid-cell blue" onclick="showCardPopup(220,1, 'blue')" style="background-image: url('blue-image.png');">
+                <span class="card-number">220</span>
+                <span class="card-small-number">1</span>
+            </div>
+            <div class="grid-cell blue" onclick="showCardPopup(252,3, 'blue')" style="background-image: url('blue-image.png');">
+                <span class="card-number">252</span>
+                <span class="card-small-number">3</span>
+            </div>
+            <div class="grid-cell green" onclick="showCardPopup(20, 1, 'green')" style="background-image: url('green-image.png');">
+                <span class="card-number">20</span>
+                <span class="card-small-number">1</span>
+            </div>
+            <div class="grid-cell green" onclick="showCardPopup(121, 0, 'green')" style="background-image: url('green-image.png');">
+                <span class="card-number">121</span>
+                <span class="card-small-number">0</span>
+            </div>
+            <div class="grid-cell green" onclick="showCardPopup(49, 0, 'green')" style="background-image: url('green-image.png');">
+                <span class="card-number">49</span>
+                <span class="card-small-number">0</span>
+            </div>
+            <div class="grid-cell green" onclick="showCardPopup(18, 0,'green')" style="background-image: url('green-image.png');">
+                <span class="card-number">18</span>
+                <span class="card-small-number">0</span>
+            </div>
+        </div>
 
         <!-- Controls section -->
         <div class="controls-section">
-            
-            <button class="control-button">เก็บ</button>
-            <button class="control-button">หยิบ 2</button>
-            <button class="control-button">หยิบ 3</button>
-            <button class="control-button">จอง</button>
-
             <div class="reserve-numbers">
-                <button class="number-button"><img src="/static/pics/2.PNG" alt="2" onclick="get_2()"></button>
-                <button class="number-button"><img src="/static/pics/3.PNG" alt="3"></button>
-                <button class="number-button"><img src="/static/pics/5.PNG" alt="5"></button>
-                <button class="number-button"><img src="/static/pics/7.PNG" alt="7"></button>
-                <button class="number-button"><img src="/static/pics/11.PNG" alt="11"></button>
+                <button class="number-button" onclick="addCoin(2)"><img src="static/pics/2.PNG" alt="2"></button>
+                <button class="number-button" onclick="addCoin(3)"><img src="static/pics/3.PNG" alt="3"></button>
+                <button class="number-button" onclick="addCoin(5)"><img src="static/pics/5.PNG" alt="5"></button>
+                <button class="number-button" onclick="addCoin(7)"><img src="static/pics/7.PNG" alt="7"></button>
+                <button class="number-button" onclick="addCoin(11)"><img src="static/pics/11.PNG" alt="11"></button>
                 <button class="number-button"><img src="/static/pics/jong.PNG" alt="15"></button>
                 <div id="result"></div>
             </div>
 
             <div class="backpack">
                 <h3>กระเป๋า</h3>
-                <div class="backpack-container" id="mybackpack">
-                <div class="backpack-button"></div>
-                </div>
+                <div class="backpack-container" id="mybackpack"></div>
             </div>
         </div>
     </div>
-    <script src="static/board.js"></script>
+
+    <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="static/board.js"></script>
 </body>
 </html>
