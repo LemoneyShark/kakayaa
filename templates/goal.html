@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full Screen Game Path</title>
+<link rel="stylesheet" href="static/goal.css">
+</head>
+<body>
+
+<div class="header">
+    <button class="back-button">กลับ</button>
+</div>
+
+<div class="game-path">
+    <!-- จุดหมาย -->
+    <div class="path-row">
+        <div class="end">จุดหมาย</div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+
+    <!-- เส้นทางกลาง -->
+    <div class="path-row">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"><div class="player"></div></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    <!-- เส้นทางกลาง -->
+    <div class="path-row">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+
+    <!-- เส้นทางล่าง -->
+    <div class="path-row">
+        <div class="start">เริ่มต้น</div>
+        <div class="circle"><div class="start-player"></div></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"><div class="player blue"></div><div class="player yellow"></div></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+</div>
+
+<script src="static/goal.js" defer></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>

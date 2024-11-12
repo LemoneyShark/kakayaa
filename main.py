@@ -32,6 +32,13 @@ def serve_index():
 async def home(request: Request):
     return templates.TemplateResponse("home.html", {"request": request})
 
+@app.get("/score")
+async def home(request: Request):
+    return templates.TemplateResponse("score.html", {"request": request})
+
+@app.get("/goal")
+async def goal(request: Request):
+    return templates.TemplateResponse("goal.html", {"request": request})
 
 @app.get("/lobby")
 async def serve_lobby(request: Request, room_id: str):
@@ -99,15 +106,20 @@ async def get_lobby(room_id: str):
 
 @app.post("/leave_room/{room_id}")
 async def leave_room(room_id: str, request: RoomRequest):
-    if room_id not in rooms or request.player_name not in rooms[room_id]:
-        raise HTTPException(status_code=404, detail="Player not in room or room not found")
-    
+    # ตรวจสอบว่าห้องมีอยู่หรือไม่
+    if room_id not in rooms:
+        raise HTTPException(status_code=404, detail="Room not found")
+
+    # ตรวจสอบว่าผู้เล่นอยู่ในห้องหรือไม่
+    if request.player_name not in rooms[room_id]:
+        raise HTTPException(status_code=404, detail="Player not in room")
+
     # ลบผู้เล่นออกจากห้อง
     rooms[room_id].remove(request.player_name)
-    
+
     # ถ้าไม่มีผู้เล่นเหลือในห้องนี้แล้ว ให้ลบห้อง
     if len(rooms[room_id]) == 0:
         del rooms[room_id]
-    
+
     return {"message": f"{request.player_name} left room {room_id} successfully"}
 
