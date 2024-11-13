@@ -191,3 +191,14 @@ body {
     height: 50px;
     cursor: pointer;
 }
+
+.highlight {
+    border: 2px solid green;
+    border-radius: 5px;
+}
+
+.number-button.selected {
+    transform: scale(3); /* ขยายปุ่มให้ใหญ่ขึ้น */
+    transition: transform 0.2s ease-in-out; /* เพิ่มความนุ่มนวลในการขยาย */
+}
+

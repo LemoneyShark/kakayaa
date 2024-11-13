@@ -72,7 +72,7 @@ body {
     border-radius: 50%;
     position: relative;
 }
-.start-player { background-color: red; }
-.player { background-color: magenta; }
-.player.blue { background-color: blue; }
-.player.yellow { background-color: yellow; }
+.player one { background-color: magenta; }
+.player two { background-color: magenta; }
+.player three { background-color: magenta; }
+.player four { background-color: magenta; }

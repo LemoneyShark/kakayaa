@@ -15,7 +15,8 @@ function getCardInfo(cardElement) {
 function updateBackpack() {
     let backpackHTML = "";
     limitedNum.forEach((num, index) => {
-        backpackHTML += `<button onclick="selectCoin(${index})" class="backpack-button">
+        // เพิ่มไฮไลท์สีเขียวที่เหรียญที่ถูกเลือก
+        backpackHTML += `<button onclick="selectCoin(${index})" class="backpack-button" style="border: 2px solid green;">
                             <img src="${num}" alt="item">
                          </button>`;
     });
@@ -35,7 +36,7 @@ function showCardPopup(cardInfo, color) {
     }).join('');
 
     Swal.fire({
-        title: 'ใส่เหรียญเพื่อแลกการ์ด',
+        title: 'ใส่เหรียญเพื่อแลกขยะ',
         html: `
             <div>เลือกเหรียญที่ต้องการ:</div>
             <div class="coin-selection">
@@ -102,11 +103,74 @@ function confirmPurchase() {
 function addCoin(coinValue) {
     if (myNum.length >= 10) {
         Swal.fire("กระเป๋าเต็มแล้ว!");
-    } else {
-        myNum.push(`static/pics/${coinValue}.png`);
-        limitedNum = myNum.slice(0, 10);
-        updateBackpack();
+        return;
     }
+    
+
+    // เช็คว่ามีเหรียญอยู่แล้วหรือไม่ใน selectedCoins
+    const isDuplicate = selectedCoins.includes(coinValue);
+    selectedCoins.push(coinValue);
+
+
+    if (isDuplicate) {
+        Swal.fire({
+            title: "เลือกเหรียญซ้ำ",
+            text: "คุณต้องการหยิบ 2 เหรียญนี้ใช้ไหม?",
+            showCancelButton: true,
+            confirmButtonText: "ใช่",
+            cancelButtonText: "ไม่"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // เพิ่มเหรียญเข้ากระเป๋าและอัพเดท backpack
+                myNum.push(`static/pics/${coinValue}.png`);
+                myNum.push(`static/pics/${coinValue}.png`);
+                limitedNum = myNum.slice(0, 10);
+                updateBackpack();
+            }
+
+            // ล้างการเลือกและไฮไลท์
+            selectedCoins = [];
+            clearHighlights();
+        });
+    } else if (selectedCoins.length === 3) {
+        Swal.fire({
+            title: "เลือก 3 เหรียญที่ต่างกัน",
+            text: "คุณต้องการเก็บเหรียญเหล่านี้หรือไม่?",
+            showCancelButton: true,
+            confirmButtonText: "ใช่",
+            cancelButtonText: "ไม่"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                selectedCoins.forEach((value) => {
+                    myNum.push(`static/pics/${value}.png`);
+                });
+                limitedNum = myNum.slice(0, 10);
+                updateBackpack();
+            }
+
+            // ล้างการเลือกและไฮไลท์
+            selectedCoins = [];
+            clearHighlights();
+        });
+    }
+}
+
+// ฟังก์ชันเพิ่มไฮไลท์
+function highlightSelectedCoins() {
+    selectedCoins.forEach((coinValue) => {
+        const buttons = document.querySelectorAll(`.number-button img[alt="${coinValue}"]`);
+        buttons.forEach((button) => {
+            button.parentElement.classList.add("highlight");
+        });
+    });
+}
+
+// ฟังก์ชันลบไฮไลท์ทั้งหมด
+function clearHighlights() {
+    const highlightedButtons = document.querySelectorAll(".number-button.highlight");
+    highlightedButtons.forEach((button) => {
+        button.classList.remove("highlight");
+    });
 }
 
 updateBackpack();
